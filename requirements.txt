@@ -1,0 +1,21 @@
+# Core
+gradio==4.39.0
+requests==2.32.3
+python-dotenv==1.0.1
+
+# LLM & Vision
+llama-cpp-python==0.3.0
+pillow==10.2.0
+torch==2.3.0
+transformers==4.40.0
+accelerate==0.30.0
+
+# Emotion Detection
+scikit-learn==1.5.0
+
+# Supabase
+supabase==2.7.0
+
+# Optional: for local dev
+black==24.4.2
+flake8==7.0.0
