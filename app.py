@@ -18,7 +18,7 @@ def login(email, password):
     try:
         res = supabase.auth.sign_in_with_password({"email": email, "password": password})
         user_id = res.user.id
-        user_session["user_id"] = user_i
+        user_session["user_id"] = user_id
         # ✅ Ensure profile exists (safe for new & existing users)
         supabase.table("profiles").upsert({"id": user_id}).execute()
         return f"✨ Welcome back!", gr.update(visible=False), gr.update(visible=True)
@@ -92,4 +92,5 @@ with gr.Blocks(title="🌙 Luna") as demo:
     send.click(chat, [msg, img], [chatbot, msg, img]).then(lambda: "", outputs=msg)
 
 demo.launch()
+
 
